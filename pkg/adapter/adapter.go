@@ -132,6 +132,11 @@ func (a *Adapter) writeOutput() error {
 	if err != nil {
 		return err
 	}
+	err = os.Chmod(a.output, 0775)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 
